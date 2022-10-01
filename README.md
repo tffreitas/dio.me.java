@@ -1,2 +1,3 @@
 # dio.me.java
 Repositorio para estudos JAVA
+Teste de sincronização...
