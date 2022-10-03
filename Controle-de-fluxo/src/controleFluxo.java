@@ -128,15 +128,80 @@ public class controleFluxo {
         }
 
         boolean recebeAuxilio = (salarioBaixo) && (muitosDependentes);
-        if (receberAuxilio) {
+        if (recebeAuxilio) {
             System.out.println("Funcionario deve receber auxilio.");
         } else{
             System.out.println("Funcionario não deve receber auxilio,");
         }
     }
 
-    
+    private static void switchSemana() {
 
+        String dia = "Terça";
+        switch (dia){
+            case "Segunda":
+                System.out.println(2);
+                break;
+            case "Terça":
+                System.out.println(3);
+                break;
+            case "Quarta":
+                System.out.println(4);
+                break;
+            case "Quinta":
+                System.out.println(5);
+                break;
+            case "Sexta":
+                System.out.println(6);
+                break;
+            case "Sabado":
+                System.out.println(7);
+                break; 
+            case "Domingo":
+                System.out.println(1);
+                break;   
+            default:
+                System.out.println(1);
+                    System.out.print("Dia Inválido!");
+                break;
+        }                      
+    }
+
+    private static void switchNumero() {
+
+        int numero = 4;
+        switch (numero){
+            case 1:
+            case 2:
+            case 3:
+                System.out.println("Certo");
+                break;
+            case 4:
+                System.out.println("Errado");
+                break;
+            case 5:
+                System.out.println("Talvez");
+                break;
+            default:
+                System.out.println("Valor Indefinido");
+                break;
+        }
+    }
+
+    private static void switchFerias() {
+
+        String mes = "Dezembro";
+        switch (mes) {
+            case "Dezembro":
+            case "Julho":
+            case "Janeiro":
+                System.out.println("Férias");
+                break;
+            default:
+                System.out.println("Mes Indefinido");
+                break;
+        }
+    }
 }
 
 
