@@ -17,14 +17,14 @@ package Exercicios;
 
         double resultado = numero1 - numero2;
 
-        System.out.println("A subtração de " + numero1 + " mais " + numero2 + " é " + resultado);      
+        System.out.println("A subtraçao de " + numero1 + " mais " + numero2 + " é " + resultado);      
     }
 
     public static void multiplicacao(double numero1,  double numero2) {
 
         double resultado = numero1 * numero2;
 
-        System.out.println("A multiplicação de " + numero1 + " mais " + numero2 + " é " + resultado);      
+        System.out.println("A multiplicaçao de " + numero1 + " mais " + numero2 + " é " + resultado);      
     }
 
     public static void divisao(double numero1,  double numero2) {
