@@ -11,7 +11,6 @@ package Classes;
     int capacidadeTanque;
 
     Carro() {
-
     }
 
     Carro(String cor, String modelo, int capacidadeTanque) {
@@ -28,7 +27,7 @@ package Classes;
         return cor;
     }
 
-    void setModelo() {
+    void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
@@ -36,7 +35,7 @@ package Classes;
         return modelo;
     }
 
-    void setCapacidadeTanque(){
+    void setCapacidadeTanque(int capacidadeTanque){
         this.capacidadeTanque = capacidadeTanque;
     }
 
