@@ -37,11 +37,15 @@ public class exemploOrdenacaoSet {
         for (Serie serie: minhasSeries1) {
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
         }
+
+        System.out.println("--\tOrdem natural (TempoEpisodio)\t--");
+        Set<Set> minhasSeries3 = new TreeSet<>(minhasSeries);
+        System.out.println();
     }
     
 }
 
-class Serie {
+class Serie implements Comparable<Serie>{
     private String nome;
     private String genero;
     private Integer tempoEpisodio;
@@ -84,5 +88,11 @@ class Serie {
     @Override
     public int hashCode() {
         return Objects.hash(nome, genero, tempoEpisodio);
+    }
+
+    @Override
+    public int compareTo(Serie serie) {
+        // TODO Auto-generated method stub
+        return Integer.compare(this.getTempoEpisodio(), serie.getTempoEpisodio());
     }
 }
