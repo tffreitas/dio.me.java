@@ -1,9 +1,11 @@
 package Set;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.TreeSet;
 
 /*
  * Dados as seguintes informações sobre minhas series favoritas.
@@ -39,8 +41,17 @@ public class exemploOrdenacaoSet {
         }
 
         System.out.println("--\tOrdem natural (TempoEpisodio)\t--");
-        Set<Set> minhasSeries3 = new TreeSet<>(minhasSeries);
-        System.out.println();
+        Set<Serie> minhasSeries2 = new TreeSet(minhasSeries);
+        for (Serie serie: minhasSeries2) {
+        System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
+        }
+
+        System.out.println("--\tOrdem Nome/Genero/TempoEpisodio\t--");
+        Set<Serie> minhaSeries3 = new TreeSet<>(new ComparatorNomeGeneroTempoEpisodio());
+        minhaSeries3.addAll(minhasSeries);
+        for (Serie serie: minhaSeries3) 
+        System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
+
     }
     
 }
@@ -92,7 +103,23 @@ class Serie implements Comparable<Serie>{
 
     @Override
     public int compareTo(Serie serie) {
+        int tempoEpisodio = Integer.compare(this.getTempoEpisodio(), serie.getTempoEpisodio());
+        if(tempoEpisodio != 0) return tempoEpisodio;
+        return this.getGenero().compareTo(serie.getGenero());
         // TODO Auto-generated method stub
-        return Integer.compare(this.getTempoEpisodio(), serie.getTempoEpisodio());
+    }
+}
+
+class ComparatorNomeGeneroTempoEpisodio implements Comparator<Serie>{
+
+    @Override
+    public int compare(Serie s1, Serie s2) {
+        int nome = s1.getNome().compareTo(s2.getNome());
+        if (nome != 0) return nome;
+
+        int genero = s1.getGenero().compareTo(s2.getGenero());
+        if (nome != 0) return nome;
+
+        return Integer.compare(s1.getTempoEpisodio(), s2.getTempoEpisodio());
     }
 }
