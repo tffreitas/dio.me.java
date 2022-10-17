@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -87,17 +88,25 @@ public class exemploMap {
                     iterator1.remove();
                 }
             }
-            System.out.println("Remova os modelos com o consumo igaul a 15,6 km/l");
+            System.out.println("Remova os modelos com o consumo igual a 15,6 km/l");
             System.out.println(carrosPopulares);
 
-            System.out.println("Exiba tosod os carros na ordem que foram informados: ");
+            System.out.println("Exiba todos os carros na ordem que foram informados: ");
+            Map<String, Double> carrosPopulares1 = new LinkedHashMap<>() <>() {{
+                put("gol", 14.4);
+                put("uno", 15.6);
+                put("mobi", 16.1);
+                put("hb20", 14.5);
+                put("kwid", 15.6);
+            }};
+            System.out.println(carrosPopulares.toString());
 
-
-
-
+            System.out.println("Exiba o dicionario ordenado pelo modelo: ");
+            Map<String, Double> carrosPopulares2 = new TreeMap<>(carrosPopulares1);
+            System.out.println(carrosPopulares2.toString()); 
             
-
-
+            System.out.println("Apague o dicionario de carros: ");
+            carrosPopulares.clear();
     }
     
 }
